@@ -4,7 +4,8 @@
 
 
 #root {
-  max-width: 1280px;
+  max-width: 100%;
+  max-width: none;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -201,15 +202,7 @@ button {
   text-align: center; /* Center text inside the button */
 }
 
-.tab-content {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.tab-content.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 }
 
 /* Reset margin and padding */
@@ -226,12 +219,30 @@ html.dark body {
   color: #eeeeee;
 }
 
-html, body, #root {
-  height: 100%;
+.tab-content {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* make sure no inner scrollbar */
+  height: auto;
+  overflow: visible;
 }
 
-body, html, #root {
-  height: auto !important;
-  overflow-y: auto !important;
-  min-height: 100vh;
+.tab-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html, body, #root {
+  min-height: 100%;     /* let it grow naturally */
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;     /* keep one browser scrollbar */
+}
+
+.availability-wrapper {
+  max-width: 650px;  /* or whatever you had */
+  margin: 0 auto;    /* center content */
+  padding: 1.5rem;
 }

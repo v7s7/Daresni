@@ -111,7 +111,7 @@ const TutorProfile = () => {
 
       <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
         <img
-          src={tutor.image}
+           src={tutor.image || "https://daresni.net/website_assets/images/user.jpg"}
           alt={tutor.name}
           style={{ width: '120px', height: '120px', borderRadius: '50%' }}
         />
